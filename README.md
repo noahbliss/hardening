@@ -1,2 +1,2 @@
-# hardening
-Hardening notes for various systems and services. 
+# Hardening and Quick Reference
+Hardening and quick reference notes for various systems and services. 
