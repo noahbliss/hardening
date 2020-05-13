@@ -21,6 +21,7 @@ EOF
 
 # This will prompt for your password.
 ldapmodify -x -D "cn=Directory Manager" -H ldaps://"$targetserver" -W -f ldapharden.txt
+rm ldapharden.txt
 ```
 If this fails, ensure that you can run a search using ldaps. You may need to update your trusted certificates.  
 
