@@ -26,3 +26,26 @@ rm ldapharden.txt
 If this fails, ensure that you can run a search using ldaps. You may need to update your trusted certificates.  
 
 
+## Dealing with LDAP  
+
+A cheat sheet on commands that might save you time and scalp-attached-hair.  
+
+
+As **Directory Manager** dump ldap contents using ldaps on its default port.  
+`ldapsearch -H ldaps://dc01.example.com -x -D 'cn=Directory Manager' -b 'dc=example,dc=com' -W`  
+
+[ldapbrowse](https://github.com/david0/ldapbrowse) can be used as well, but does _not_ accept `-W` for interactive password entry. 
+Make sure `export HISTCONTROL=ignorespace` is in your .bashrc/.zshrc so passwords are not stored there!  
+```
+# THE NEXT LINE STARTS WITH A SPACE! THIS IS TO PREVENT STORAGE IN THE HISTORY FILE!
+ password=""
+./ldapbrowse -H ldaps://dc01.example.com -b dc=example,dc=com -D 'cn=Directory Manager' -w "$password"
+```
+
+Or we can do this as a standard user:  
+```
+username=""
+# NOTE THE SPACE STARTING THE NEXT LINE!
+ password=""
+./ldapbrowse -H ldaps://dc01.example.com -b dc=example,dc=com -D "uid=$username,cn=users,cn=accounts,dc=example,dc=com" -w "$password" 
+```
