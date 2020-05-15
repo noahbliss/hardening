@@ -2,7 +2,7 @@
 
 FreeIPA is a robust albeit somewhat feature-spartan authentication and policy system for Linux.  
 
-At the time of writing, FreeIPA does _not_ offer a means of browsing its LDAP structure. 
+At the time of writing, FreeIPA does _not_ offer a means of browsing its LDAP structure through its own implementation, OpenLDAP-compatible tools seem to work without issue. 
 
 ## Disable Anonymous LDAP Connections & Require SSL for Credential Transmission:  
 You will need to enter your **Directory Manager password** when prompted...  
