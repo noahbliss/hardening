@@ -40,6 +40,8 @@ Make sure `export HISTCONTROL=ignorespace` is in your .bashrc/.zshrc so password
 # THE NEXT LINE STARTS WITH A SPACE! THIS IS TO PREVENT STORAGE IN THE HISTORY FILE!
  password=""
 ./ldapbrowse -H ldaps://dc01.example.com -b dc=example,dc=com -D 'cn=Directory Manager' -w "$password"
+# When you're done, remove the password in the variable:
+unset password
 ```
 
 Or we can do this as a standard user:  
@@ -48,4 +50,6 @@ username=""
 # NOTE THE SPACE STARTING THE NEXT LINE!
  password=""
 ./ldapbrowse -H ldaps://dc01.example.com -b dc=example,dc=com -D "uid=$username,cn=users,cn=accounts,dc=example,dc=com" -w "$password" 
+# When you're done, remove the password in the variable:
+unset password
 ```
