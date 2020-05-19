@@ -7,7 +7,7 @@ At the time of writing, FreeIPA does _not_ offer a means of browsing its LDAP st
 ## Disable Anonymous LDAP Connections & Require SSL for Credential Transmission:  
 You will need to enter your **Directory Manager password** when prompted...  
 ```
-targetserver=ldap1.example.com
+targetserver=dc01.example.com
 
 cat << EOF > "ldapharden.txt"
 dn: cn=config
@@ -28,7 +28,7 @@ If this fails, ensure that you can run a search using ldaps. You may need to upd
 
 ## Dealing with LDAP  
 
-A cheat sheet on commands that might save you time and scalp-attached-hair.  
+A cheat sheet on commands that might save you time and scalp-attached hair.  
 
 
 As **Directory Manager** dump ldap contents using ldaps on its default port.  
